@@ -6,30 +6,46 @@
     <title>Assignment-06</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- font -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-[inter]">
+
+    <!-- navbar section -->
     <nav class="bg-[#15803D]">
-        <div class="nav-container mx-auto flex justify-between items-center text-white px-28 py-5" >
-            <div class="text-xl font-semibold">Green Earth</div>
+        <div class=" max-w-7xl mx-auto flex justify-between items-center text-white px-6 py-4">
+            <div class="text-base md:text-xl font-semibold">Green Earth</div>
             <div>
-                <ul class="flex justify-between items-center gap-4">
+                <ul class="text-sm md:text-base flex justify-between items-center gap-4">
                     <li>About</li>
                     <li>Gallery</li>
                     <li>Plant a tree</li>
                 </ul>
             </div>
             <div>
-                <button class="bg-yellow-400 text-green-800 rounded-xl p-2">
+                <button class=" bg-yellow-400 text-green-800 rounded-3xl py-2 px-4 text-sm md:text-base md:py-3 md:px-6">
                     Plant a tree
                 </button>
             </div>
         </div>
     </nav>
 
-    <div class="flex justify-between items-center">
-        <div><img src="./assets/hero-leaf1.png" alt=""></div>
-        <div></div>
-        <div><img src="./assets/hero-leaf2.png" alt=""></div>
+
+<!-- banner section -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-10 bg-[#CFF0DC]">
+        <div class="w-54 md:w-auto"><img src="./assets/hero-leaf1.png" alt=""></div>
+        <div class="text-center space-y-4">
+            <h1 class="font-bold text-3xl md:text-5xl whitespace-nowrap">Plant a Tree, Grow a Future</h1>
+            <h3>Join our mission to plant 1 million trees and make the Earth greener for future
+                generations.
+            </h3>
+                <button class="bg-yellow-400 text-green-800 rounded-3xl py-2 px-4 md:py-3 md:px-5">
+                    Get Involved
+                </button>
+        </div>
+        <div class="w-54 md:w-auto"><img src="./assets/hero-leaf2.png"  alt=""></div>
     </div>
 
 </body>
