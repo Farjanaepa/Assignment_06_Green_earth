@@ -10,6 +10,7 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
 </head>
 <body class="font-[inter] bg-[#F0FDF4]">
 
@@ -49,84 +50,46 @@
     </div>
 
     <!-- card section start -->
-
-   <section class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-3">
-  <!-- Left: Category List -->
-  <div class="md:w-2/12 p-3 rounded-lg">
-    <h2 class="text-2xl font-bold mb-6">Categories</h2>
-    <ul class="space-y-2 flex flex-col gap-3">
-      <li>All Trees</li>
-      <li>Fruit Trees</li>
-      <li>Flowering Trees</li>
-      <li>Shade Trees</li>
-      <li>Medicinal Trees</li>
-      <li>Timber Trees</li>
-      <li>Evergreen Trees</li>
-      <li>Ornamental Trees</li>
-      <li>Bamboo</li>
-      <li>Climbers </li>
-      <li>Aquatic Plants</li>
-    </ul>
-  </div>
-  <div class="md:w-8/12">
-  
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
-      <div class="bg-white p-4 rounded-lg text-left space-y-2">
-        <img src="./assets/about.png" alt="">
-        <h2 class="text-sm font-semibold">Mango Tree</h2>
-        <span class="text-xs">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green </span>
-        <div class="flex justify-between pt-2 items-center
-        ">
-            <button class="text-sm bg-green-100 p-2 rounded-2xl">Fruit Tree</button>
-            <span>৳500</span>
-        </div>
-        <button class=" w-full bg-green-800 text-white rounded-3xl py-3 px-5">
-                    Plant a tree
-                </button>
-      </div>
-       <div class="bg-white p-4 rounded-lg text-left space-y-2">
-        <img src="./assets/about.png" alt="">
-        <h2 class="text-sm font-semibold">Mango Tree</h2>
-        <span class="text-xs">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green </span>
-        <div class="flex justify-between pt-2 items-center
-        ">
-            <button class="text-sm bg-green-100 p-2 rounded-2xl">Fruit Tree</button>
-            <span>৳500</span>
-        </div>
-        <button class=" w-full bg-green-800 text-white rounded-3xl py-3 px-5">
-                    Plant a tree
-                </button>
-      </div>
-       <div class="bg-white p-4 rounded-lg text-left space-y-2">
-        <img src="./assets/about.png" alt="">
-        <h2 class="text-sm font-semibold">Mango Tree</h2>
-        <span class="text-xs">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green </span>
-        <div class="flex justify-between pt-2 items-center
-        ">
-            <button class="text-sm bg-green-100 p-2 rounded-2xl">Fruit Tree</button>
-            <span>৳500</span>
-        </div>
-        <button class=" w-full bg-green-800 text-white rounded-3xl py-3 px-5">
-                    Plant a tree
-                </button>
-      </div>
-      
-      
-     
+<!-- card + category + cart section -->
+  <section class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6">
+    <!-- Left: Category List -->
+    <div class="md:w-2/12 p-3 rounded-lg">
+      <h2 class="text-2xl font-bold mb-6">Categories</h2>
+      <ul class="treeCatagories space-y-2 flex flex-col gap-3">
+        <!-- dynamically loaded -->
+      </ul>
+      <button
+        class="all-trees mt-4 w-full bg-green-800 text-white rounded-3xl py-2 px-4"
+      >
+        All Trees
+      </button>
     </div>
-  </div>
 
-  <!-- Right: History -->
-  <div class="md:w-2/12 bg-white p-3 rounded-lg">
-    <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
-    <ul class="space-y-2">
-      <li>History Item 1</li>
-      <li>History Item 2</li>
-      <li>History Item 3</li>
-      <li>History Item 4</li>
-    </ul>
-  </div>
-</section>
+    <!-- Middle: Tree Cards -->
+    <div class="md:w-8/12">
+      <!-- spinner -->
+      <div id="spinner" class="hidden text-center py-10">
+        <span class="loading loading-dots loading-lg text-green-800"></span>
+      </div>
+
+      <div class="tree-card-section grid grid-cols-1 lg:grid-cols-3 gap-6 tree-card-container">
+        <!-- dynamically loaded tree cards -->
+      </div>
+    </div>
+
+    <!-- Right: Cart -->
+    <div class="md:w-2/12 bg-white p-3 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
+      <div
+        class="cart-items-container flex flex-col gap-3 text-sm"
+      >
+        <!-- cart items appear here -->
+      </div>
+      <div class="mt-4 font-semibold">
+        Total: <span class="total-amount">$0</span>
+      </div>
+    </div>
+  </section>
 <!-- About champain section -->
 <section class="max-w-[1090px] mx-auto px-6 py-10 flex flex-col md:flex-col items-center">
     <h1 class="text-[32px] font-semibold mb-10">About the Campaign</h1>
@@ -196,7 +159,55 @@
 </footer>
 
 
+ <!-- Modal for Tree Details -->
+  <dialog id="treeModal" class="modal">
+    <div class="modal-box w-96 py-10">
+      <form method="dialog">
+        <button
+          class="btn btn-md btn-square btn-ghost absolute right-5 bottom-4"
+        >
+          Close
+        </button>
+      </form>
+      <h3 class="modal-title text-lg font-bold"></h3>
+      <img class="modal-img w-full h-[250px] object-cover rounded-lg my-3" />
+          <p class="modal-category text-sm font-medium text-gray-700 mb-1"></p>
+      <p class="modal-price font-semibold text-green-600"></p>
+      <p class="modal-desc py-2"></p>
+    </div>
+  </dialog>
 
+  <!-- Modal for Tree Details -->
+<dialog id="treeModal" class="modal">
+  <div class="modal-box w-96 rounded-xl">
+    <form method="dialog">
+      <button
+        class="btn btn-md btn-square btn-ghost absolute right-5 top-5"
+      >
+        ✕
+      </button>
+    </form>
+
+    <!-- Title -->
+    <h3 class="modal-title text-xl font-bold text-gray-800 mb-2"></h3>
+
+    <!-- Image -->
+   
+
+    <!-- Category -->
+    <p class="modal-category text-sm font-medium text-gray-600 mb-1"></p>
+
+    <!-- Price -->
+    <p class="modal-price text-lg font-semibold text-green-500 mb-3"></p>
+
+    <!-- Description -->
+    <p class="modal-desc text-gray-700 leading-relaxed"> </p>
+  </div>
+</dialog>
+
+
+
+<script src="./script.js"></script>
 
 </body>
 </html>
