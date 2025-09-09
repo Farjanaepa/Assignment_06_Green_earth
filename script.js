@@ -43,7 +43,11 @@ function showTrees(list) {
     card.className = "card bg-base-100 shadow-sm";
     card.innerHTML = `
       <div class="p-3">
-        <figure><img src="${tree.image}" class="rounded-lg object-contain md:h-[18rem] mx-auto"></figure>
+        <figure>
+        <div class=" object-contain md:h-[15rem] w-full mx-auto">
+        <img src="${tree.image}" class = "rounded-lg  w-full h-fix">
+        </div>
+        </figure>
       </div>
       <div class="card-body">
         <h2 class="card-title inter cursor-pointer">${tree.name}</h2>
