@@ -51,7 +51,7 @@ function showTrees(list) {
       </div>
       <div class="card-body">
         <h2 class="card-title inter cursor-pointer">${tree.name}</h2>
-        <p>${tree.description.slice(0, 100)}${tree.description.length > 80 ? "..." : ""}</p>
+        <p>${tree.description.slice(0, 80)}${tree.description.length > 80 ? "..." : ""}</p>
         <div class="flex justify-between items-center">
           <div class="badge badge-outline rounded-3xl bg-[#DCFCE7] text-[#15803D]">${tree.category}</div>
           <div class="inter font-semibold">$${parseInt(tree.price)}</div>
