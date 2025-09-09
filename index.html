@@ -36,7 +36,7 @@
 
 <!-- banner section -->
     <div class="flex flex-col md:flex-row justify-between items-center gap-10 bg-[#CFF0DC]">
-        <div class="w-54 md:w-auto"><img src="./assets/hero-leaf1.png" alt=""></div>
+        <div class="w-52 md:w-auto"><img src="./assets/hero-leaf1.png" alt=""></div>
         <div class="text-center space-y-4">
             <h1 class="font-bold text-3xl md:text-5xl whitespace-nowrap">Plant a Tree, Grow a Future</h1>
             <h3>Join our mission to plant 1 million trees and make the Earth greener for future
@@ -46,17 +46,17 @@
                     Get Involved
                 </button>
         </div>
-        <div class="w-54 md:w-auto"><img src="./assets/hero-leaf2.png"  alt=""></div>
+        <div class="w-52 md:w-auto"><img src="./assets/hero-leaf2.png"  alt=""></div>
     </div>
 
-    <!-- card section start -->
-<!-- card + category + cart section -->
+    <!-- card section -->
+
   <section class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6">
-    <!-- Left: Category List -->
+  <!-- category -->
     <div class="md:w-2/12 p-3 rounded-lg">
       <h2 class="text-2xl font-bold mb-6">Categories</h2>
-      <ul class="treeCatagories space-y-2 flex flex-col gap-3">
-        <!-- dynamically loaded -->
+      <ul class="tree-categories space-y-2 flex flex-col gap-3">
+
       </ul>
       <button
         class="all-trees mt-4 w-full bg-green-800 text-white rounded-3xl py-2 px-4"
@@ -65,25 +65,22 @@
       </button>
     </div>
 
-    <!-- Middle: Tree Cards -->
+   
     <div class="md:w-8/12">
-      <!-- spinner -->
       <div id="spinner" class="hidden text-center py-10">
         <span class="loading loading-dots loading-lg text-green-800"></span>
       </div>
 
       <div class="tree-card-section grid grid-cols-1 lg:grid-cols-3 gap-6 tree-card-container">
-        <!-- dynamically loaded tree cards -->
+      
       </div>
     </div>
 
-    <!-- Right: Cart -->
+   <!-- cart added section -->
     <div class="md:w-2/12 bg-white p-3 rounded-lg">
       <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
-      <div
-        class="cart-items-container flex flex-col gap-3 text-sm"
-      >
-        <!-- cart items appear here -->
+      <div class="cart-items-container flex flex-col gap-3 text-sm">
+      
       </div>
       <div class="mt-4 font-semibold">
         Total: <span class="total-amount">$0</span>
@@ -176,34 +173,6 @@
       <p class="modal-desc py-2"></p>
     </div>
   </dialog>
-
-  <!-- Modal for Tree Details -->
-<dialog id="treeModal" class="modal">
-  <div class="modal-box w-96 rounded-xl">
-    <form method="dialog">
-      <button
-        class="btn btn-md btn-square btn-ghost absolute right-5 top-5"
-      >
-        ✕
-      </button>
-    </form>
-
-    <!-- Title -->
-    <h3 class="modal-title text-xl font-bold text-gray-800 mb-2"></h3>
-
-    <!-- Image -->
-   
-
-    <!-- Category -->
-    <p class="modal-category text-sm font-medium text-gray-600 mb-1"></p>
-
-    <!-- Price -->
-    <p class="modal-price text-lg font-semibold text-green-500 mb-3"></p>
-
-    <!-- Description -->
-    <p class="modal-desc text-gray-700 leading-relaxed"> </p>
-  </div>
-</dialog>
 
 
 
