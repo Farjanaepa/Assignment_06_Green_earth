@@ -88,6 +88,7 @@ function showTrees(list) {
         };
         cartBox.appendChild(div);
         cart[tree.id] = { qty: 1, price: parseInt(tree.price), el: div };
+         alert(`"${tree.name}" added to your cart!`);
       } else {
         cart[tree.id].qty++;
         cart[tree.id].el.querySelector(".item-count").innerText =
